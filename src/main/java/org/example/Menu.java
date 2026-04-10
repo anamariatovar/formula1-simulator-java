@@ -99,17 +99,20 @@ public class Menu {
                 case 121:
                     infCircuitos.listarCarreras();
                     System.out.println("\nINFORMACION DEL CIRCUITO");
-                    infCircuitos.informacionCircuito();
+                    System.out.println("SELECCIONE EL NUMERO DE LA CARRERA");
+                    infCircuitos.informacionCircuito(scanner.nextInt());
                     break;
                 case 122:
                     infCircuitos.listarCarreras();
                     System.out.println("\nINFORMACION DEL MUNDIAL DE CONSTRUCTORES");
-                    infCarrera.infoContructoresXCarrera();
+                    System.out.println("SELECCIONE EL NUMERO DE CARRERA");
+                    infCarrera.infoContructoresXCarrera(scanner.nextInt());
                     break;
                 case 123:
                     infCircuitos.listarCarreras();
                     System.out.println("\nINFORMACION DEL MUNDIAL DE PILOTOS");
-                    infCarrera.infoPilotosXCarrera();
+                    System.out.println("SELECCIONE EL NÚMERO DE CARRERA");
+                    infCarrera.infoPilotosXCarrera(scanner.nextInt());
                     break;
                 case 124:
                     return;
@@ -165,12 +168,14 @@ public class Menu {
                 case 221:
                     infPilotos.listarPilotos();
                     System.out.println("\nINFORMACION DEL PILOTO");
-                    infPilotos.informacionPiloto();
+                    System.out.println("SELECCIONE EL NÚMERO DEL PILOTO");
+                    infPilotos.informacionPiloto(scanner.nextInt());
                     break;
                 case 222:
                     infPilotos.listarPilotos();
                     System.out.println("\nINFORMACION DEL MUNDIAL DE PILOTOS");
-                    infPilotos.mundialXPilotos();
+                    System.out.println("SELECCIONE EL NÚMERO DEL PILOTO:");
+                    infPilotos.mundialXPilotos(scanner.nextInt());
                     break;
                 case 223:
                     return;
@@ -227,17 +232,20 @@ public class Menu {
                 case 321:
                     infEscuderia.listarEscuderias();
                     System.out.println("\nINFORMACION DE LA ESCUDERIA");
-                    infEscuderia.informacionEscuderia();
+                    System.out.println("SELECCIONE EL NUMERO DE LA ESCUDERIA");
+                    infEscuderia.informacionEscuderia(scanner.nextInt());
                     break;
                 case 322:
                     infEscuderia.listarEscuderias();
                     System.out.println("\nINFORMACION DEL MUNDIAL DE CONSTRUCTORES");
-                    infEscuderia.contructoresXEscuderia();
+                    System.out.println("SELECCIONE EL NÚMERO DE LA ESCUDERÍA");
+                    infEscuderia.contructoresXEscuderia(scanner.nextInt());
                     break;
                 case 323:
                     infEscuderia.listarEscuderias();
                     System.out.println("\nINFORMACION DEL MUNDIAL DE PILOTOS");
-                    infEscuderia.pilotosXEscuderia();
+                    System.out.println("SELECCIONE EL NÚMERO DE LA ESCUDERÍA:");
+                    infEscuderia.pilotosXEscuderia(scanner.nextInt());
                     break;
                 case 324:
                     return;
@@ -289,13 +297,25 @@ public class Menu {
                 case 51:
                     System.out.println(bannerCompararPilotos);
                     infPilotos.listarPilotos();
-                    infPilotos.compararPilotos();
+                    System.out.println("SELECCIONE EL PILOTO-1:");
+                    int p1 = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("SELECCIONE EL PILOTO-2:");
+                    int p2 = scanner.nextInt();
+                    scanner.nextLine();
+                    infPilotos.compararPilotos(p1, p2);
 
                     break;
                 case 52:
                     System.out.println(bannerCompararEscuderias);
                     infEscuderia.listarEscuderias();
-                    infEscuderia.compararEscuderia();
+                    System.out.println("SELECCIONE LA ESCUDERIA-1:");
+                    int e1 = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("SELECCIONE LA ESCUDERIA-2:");
+                    int e2 = scanner.nextInt();
+                    scanner.nextLine();
+                    infEscuderia.compararEscuderia(e1, e2);
                     break;
                 case 53:
                     break;

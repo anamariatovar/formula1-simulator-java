@@ -2,10 +2,13 @@ package org.example;
 
 import com.poiji.annotation.ExcelCellName;
 import org.example.data.ExcelDataImporter;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Carrera {
-    Scanner scanner = new Scanner(System.in);
     @ExcelCellName("ORDENCARRERA")
     private int ordenCarrera;
     @ExcelCellName("NOMBRECIRCUITO")
@@ -78,13 +81,11 @@ public class Carrera {
     }
 
 
-    public void infoContructoresXCarrera(){
+    public void infoContructoresXCarrera(int opcion){
         ExcelDataImporter.loadDatasFromeExcel();
         List<Carrera> infoCarrera = new ArrayList<>(getCarrerasListDto());
 
-        System.out.println("SELECCIONE EL NUMERO DE CARRERA");
         Map<String, Integer> puntosEscuderias = new HashMap<>();
-        int opcion = scanner.nextInt();
         boolean encontrado = false;
         String nombreCircuito = "";
 
@@ -120,12 +121,10 @@ public class Carrera {
         }
         System.out.println("  +-----------------------------+---------+");
     }
-    public void infoPilotosXCarrera(){
+    public void infoPilotosXCarrera(int opcion){
         ExcelDataImporter.loadDatasFromeExcel();
         List<Carrera> infoCarrera = new ArrayList<>(getCarrerasListDto());
 
-        System.out.println("SELECCIONE EL NÚMERO DE CARRERA");
-        int opcion = scanner.nextInt();
         boolean encontrado = false;
         String nombreCircuito = "";
         System.out.println();

@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import static org.example.Piloto.getDataPilotos;
 
 public class Escuderia {
-    Scanner scanner = new Scanner(System.in);
     @ExcelCellName("ORDENESCUDERIAS")
     private int ordenEscuderia;
     @ExcelCellName("ESCUDERIA")
@@ -80,11 +79,9 @@ public class Escuderia {
         }
     }
 
-    public void informacionEscuderia() {
+    public void informacionEscuderia(int opcion) {
         ExcelDataImporter.loadDatasFromeExcel();
         List<Escuderia> infoEscuderia = new ArrayList<>(getDataListEscuderia());
-        System.out.println("SELECCIONE EL NUMERO DE LA ESCUDERIA");
-        int opcion = scanner.nextInt();
         boolean encontrado = false;
         for (Escuderia escuderia : infoEscuderia) {
             if (opcion == escuderia.getOrdenEscuderia()) {
@@ -114,13 +111,9 @@ public class Escuderia {
         }
     }
 
-    public void contructoresXEscuderia() {
+    public void contructoresXEscuderia(int opcion) {
         ExcelDataImporter.loadDatasFromeExcel();
         List<Escuderia> infoEscuderia = new ArrayList<>(getDataListEscuderia());
-
-        System.out.println("SELECCIONE EL NÚMERO DE LA ESCUDERÍA");
-        int opcion = scanner.nextInt();
-        scanner.nextLine();
 
         Escuderia escuderiaSeleccionada = infoEscuderia.stream()
                 .filter(e -> opcion == e.getOrdenEscuderia())
@@ -164,13 +157,9 @@ public class Escuderia {
 
     }
 
-    public void pilotosXEscuderia() {
+    public void pilotosXEscuderia(int opcion) {
         ExcelDataImporter.loadDatasFromeExcel();
         List<Escuderia> infoEscuderia = new ArrayList<>(getDataListEscuderia());
-
-        System.out.println("SELECCIONE EL NÚMERO DE LA ESCUDERÍA:");
-        int opcion = scanner.nextInt();
-        scanner.nextLine();
 
         Escuderia escuderiaSeleccionada = infoEscuderia.stream()//crea un stream secuencia de datos que permite procesarlos
                 .filter(e -> opcion == e.getOrdenEscuderia())//filtra los objetos de escuderia que sean igual al nombre del equipo seleccionado
@@ -205,16 +194,9 @@ public class Escuderia {
         }
         System.out.println("+---------------------------------------------+--------+-----------+");
     }
-    public void compararEscuderia(){
+    public void compararEscuderia(int opcion1, int opcion2){
         ExcelDataImporter.loadDatasFromeExcel();
         List<Escuderia> escuderias = getDataListEscuderia();
-        System.out.println("SELECCIONE LA ESCUDERIA-1:");
-        int opcion1 = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.println("SELECCIONE LA ESCUDERIA-2:");
-        int opcion2 = scanner.nextInt();
-        scanner.nextLine();
 
         if (opcion1 < 1 || opcion1 > escuderias.size() || opcion2 < 1 || opcion2 > escuderias.size()) {
             System.out.println("HAY UNA OPCIÓN NO VÁLIDA");

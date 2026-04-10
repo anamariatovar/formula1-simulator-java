@@ -7,7 +7,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Circuito {
-    Scanner scanner = new Scanner(System.in);
     @ExcelCellName("ORDENCIRCUITO")
     private int ordenCircuito;
     @ExcelCellName("CIRCUITO")
@@ -75,11 +74,9 @@ public class Circuito {
         }
     }
 
-    public void informacionCircuito() {
+    public void informacionCircuito(int opcion) {
         ExcelDataImporter.loadDatasFromeExcel();
         List<Circuito> infoCircuito = new ArrayList<>(getDataListCircuito());
-        System.out.println("SELECCIONE EL NUMERO DE LA CARRERA");
-        int opcion = scanner.nextInt();
 
         for (Circuito circuito : infoCircuito) {
             if (opcion == circuito.getOrdenCircuito()) {
