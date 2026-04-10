@@ -1,0 +1,10 @@
+Coloca aquí tu archivo: dataFormulaUno.xlsx
+
+Hojas requeridas (nombres exactos): ESCUDERIA, CIRCUITO, PILOTO, CARRERA.
+
+Si no hay ningún Excel en el proyecto, la aplicación genera uno mínimo de ejemplo en:
+  %USERPROFILE%\.formula1-simulator\dataFormulaUno.xlsx
+
+También puedes indicar la ruta con:
+  - Propiedad JVM: -Dformula1.excel.path=C:\ruta\completa\archivo.xlsx
+  - Variable de entorno: FORMULA1_EXCEL_PATH

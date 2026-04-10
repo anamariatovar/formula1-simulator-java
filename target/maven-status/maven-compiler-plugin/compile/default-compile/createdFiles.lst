@@ -1,0 +1,4 @@
+org\example\data\GenerarArchivoExcel.class
+org\example\MainConsola.class
+org\example\ui\SimuladorVentana.class
+org\example\ui\OutputCapture.class

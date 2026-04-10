@@ -1,0 +1,15 @@
+En esta carpeta debe estar: dataFormulaUno.xlsx (ya hay uno de ejemplo en el repositorio).
+
+Hojas requeridas (nombres exactos): ESCUDERIA, CIRCUITO, PILOTO, CARRERA.
+
+Sustituye el .xlsx por tu archivo real si lo tienes.
+
+Si necesitas regenerar el ejemplo desde código:
+  org.example.data.GenerarArchivoExcel (main)
+
+Otras rutas opcionales:
+  - Propiedad JVM: -Dformula1.excel.path=C:\ruta\completa\archivo.xlsx
+  - Variable de entorno: FORMULA1_EXCEL_PATH
+  - Copia dataFormulaUno.xlsx en la carpeta desde la que ejecutas la aplicación
+
+Tras cambiar resources en el IDE: Build / Rebuild Project para que se copie a target/classes.

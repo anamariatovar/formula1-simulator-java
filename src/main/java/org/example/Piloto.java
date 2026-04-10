@@ -5,11 +5,9 @@ import org.example.data.ExcelDataImporter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Piloto {
-    Scanner scanner = new Scanner(System.in);
     @ExcelCellName("ORDENPILOTO")
     private int ordenPiloto;
     @ExcelCellName("NOMBREPILOTO")
@@ -88,12 +86,10 @@ public class Piloto {
         }
     }
 
-    public void informacionPiloto(){
+    public void informacionPiloto(int opcion){
         ExcelDataImporter.loadDatasFromeExcel();
         List<Piloto> infoPiloto = new ArrayList<>(getDataPilotos());
 
-        System.out.println("SELECCIONE EL NÚMERO DEL PILOTO");
-        int opcion = scanner.nextInt();
         boolean encontrado = false;
 
         System.out.println();
@@ -127,15 +123,10 @@ public class Piloto {
 
     }
 
-    public void mundialXPilotos(){
+    public void mundialXPilotos(int opcion){
         ExcelDataImporter.loadDatasFromeExcel();
         List<Carrera> carreras = Carrera.getCarrerasListDto();
         List<Piloto> pilotosOrdenados = getDataPilotos();
-
-
-        System.out.println("SELECCIONE EL NÚMERO DEL PILOTO:");
-        int opcion = scanner.nextInt();
-        scanner.nextLine();
 
         if (opcion < 1 || opcion > pilotosOrdenados.size()) {
             System.out.println("OPCIÓN NO VÁLIDA");
@@ -182,17 +173,10 @@ public class Piloto {
 
     }
 
-    public void compararPilotos (){
+    public void compararPilotos(int opcion1, int opcion2){
         ExcelDataImporter.loadDatasFromeExcel();
         List<Carrera> carreras = Carrera.getCarrerasListDto();
         List<Piloto> pilotos = getDataPilotos();
-
-        System.out.println("SELECCIONE EL PILOTO-1:");
-        int opcion1 = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("SELECCIONE EL PILOTO-2:");
-        int opcion2 = scanner.nextInt();
-        scanner.nextLine();
 
         if (opcion1 < 1 || opcion1 > pilotos.size() || opcion2 < 1 || opcion2 > pilotos.size()) {
             System.out.println("HAY UNA OPCION NO VÁLIDA");
